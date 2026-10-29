@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Network Topologies</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 12px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .intro {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            margin: 35px 0 20px;
+            border-left: 5px solid #2563eb;
+            padding-left: 12px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px #00000018;
+        }
+
+        .card h3 {
+            color: #0f766e;
+            margin-bottom: 10px;
+        }
+
+        .diagram {
+            background: #eff6ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            min-height: 95px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .node {
+            background: #2563eb;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 7px;
+            display: inline-block;
+            margin: 4px;
+            font-size: 13px;
+        }
+
+        .line {
+            color: #0f766e;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .wireless-icon {
+            font-size: 42px;
+        }
+
+        .note {
+            background: #dbeafe;
+            border-left: 4px solid #2563eb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        .quiz {
+            background: white;
+            padding: 25px;
+            margin-top: 35px;
+            border-radius: 12px;
+        }
+
+        .quiz label {
+            display: block;
+            margin: 12px 0;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Computer Network Topologies</h1>
+    <p>Easy Notes, Types, Examples and Diagrams</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#wired">Wired</a>
+    <a href="#wireless">Wireless</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<main class="container">
+
+    <section class="intro" id="home">
+        <h2>2.1 Definition of Topology</h2>
+        <p>
+            Network topology is the arrangement of computers and other
+            devices in a network. It explains how devices are connected
+            and how they communicate with each other.
+        </p>
+        <div class="note">
+            <strong>Example:</strong> Computers connected to one central
+            switch in an office form a Star Topology.
+        </div>
+    </section>
+
+    <h2 class="section-title">2.2.1 Wired Topologies</h2>
+
+    <section class="cards" id="wired">
+
+        <article class="card">
+            <h3>1. Bus Topology</h3>
+            <p>All computers connect to one main cable called the backbone.</p>
+            <div class="diagram">
+                <div>
+                    <div class="node">PC 1</div>
+                    <div class="node">PC 2</div>
+                    <div class="node">PC 3</div>
+                    <div class="line">━━━━━━━━━━━━</div>
+                    <small>Main Cable</small>
+                </div>
+            </div>
+            <p><b>Advantage:</b> Low cost and uses less cable.</p>
+            <p><b>Disadvantage:</b> Main cable failure can stop the network.</p>
+        </article>
+
+        <article class="card">
+            <h3>2. Star Topology</h3>
+            <p>Every computer connects to a central switch or hub.</p>
+            <div class="diagram">
+                <div>
+                    <div class="node">PC 1</div>
+                    <div class="node">PC 2</div>
+                    <div class="line">↘ ↓ ↙</div>
+                    <div class="node">Switch</div>
+                    <div class="line">↗ ↑ ↖</div>
+                    <div class="node">PC 3</div>
+                    <div class="node">PC 4</div>
+                </div>
+            </div>
+            <p><b>Advantage:</b> Easy to manage and troubleshoot.</p>
+            <p><b>Disadvantage:</b> Switch failure affects connected devices.</p>
+        </article>
+
+        <article class="card">
+            <h3>3. Ring Topology</h3>
+            <p>Each device connects to two neighboring devices in a ring.</p>
+            <div class="diagram">
+                <div>
+                    <div class="node">PC 1</div>
+                    <span class="line">↔</span>
+                    <div class="node">PC 2</div>
+                    <br>
+                    <span class="line">↕</span>
+                    <span class="line"> ↕ </span>
+                    <br>
+                    <div class="node">PC 4</div>
+                    <span class="line">↔</span>
+                    <div class="node">PC 3</div>
+                </div>
+            </div>
+            <p><b>Advantage:</b> Provides an organized communication path.</p>
+            <p><b>Disadvantage:</b> A broken link can disrupt a basic ring.</p>
+        </article>
+
+        <article class="card">
+            <h3>4. Mesh Topology</h3>
+            <p>Devices have multiple connections to other devices.</p>
+            <div class="diagram">
+                <div>
+                    <div class="node">A</div>
+                    <div class="node">B</div>
+                    <div class="line">╲ ╳ ╱</div>
+                    <div class="node">C</div>
+                    <div class="node">D</div>
+                </div>
+            </div>
+            <p><b>Advantage:</b> Multiple paths improve reliability.</p>
+            <p><b>Disadvantage:</b> Can require more cables and cost.</p>
+        </article>
+
+        <article class="card">
+            <h3>5. Hybrid Topology</h3>
+            <p>Combines two or more topology types in one network.</p>
+            <div class="diagram">
+                <div>
+                    <div class="node">Star</div>
+                    <span class="line"> ↔ </span>
+                    <div class="node">Bus</div>
+                    <br>
+                    <span class="node">Combined Network</span>
+                </div>
+            </div>
+            <p><b>Advantage:</b> Flexible and suitable for large networks.</p>
+            <p><b>Disadvantage:</b> Planning and maintenance can be complex.</p>
+        </article>
+
+    </section>
+
+    <h2 class="section-title">2.2.2 Wireless Networks</h2>
+
+    <section class="cards" id="wireless">
+
+        <article class="card">
+            <h3>1. Wi-Fi</h3>
+            <div class="diagram">
+                <div>
+                    <div class="wireless-icon">📶</div>
+                    <div class="node">Router</div>
+                    <p class="line">))) Wireless Signal (((</p>
+                    <div class="node">Mobile / Laptop</div>
+                </div>
+            </div>
+            <p>Wi-Fi connects devices wirelessly using radio signals.</p>
+            <p><b>Example:</b> Home and school internet networks.</p>
+        </article>
+
+        <article class="card">
+            <h3>2. Satellite</h3>
+            <div class="diagram">
+                <div>
+                    <div class="wireless-icon">🛰️</div>
+                    <p class="line">↕ Signal ↕</p>
+                    <div class="node">Ground Station</div>
+                </div>
+            </div>
+            <p>Satellite communication sends signals between Earth stations
+                and satellites in space.</p>
+            <p><b>Example:</b> Satellite internet and television.</p>
+        </article>
+
+        <article class="card">
+            <h3>3. Radio Waves</h3>
+            <div class="diagram">
+                <div>
+                    <div class="wireless-icon">📡</div>
+                    <p class="line">))) ))) )))</p>
+                    <div class="node">Wireless Devices</div>
+                </div>
+            </div>
+            <p>Radio waves carry information through the air without
+                requiring a physical cable.</p>
+            <p><b>Example:</b> Radio communication and wireless devices.</p>
+        </article>
+
+    </section>
+
+    <section class="intro">
+        <h2>Quick Revision</h2>
+        <p><b>Bus:</b> One main cable.</p>
+        <p><b>Star:</b> One central switch or hub.</p>
+        <p><b>Ring:</b> Devices connected in a loop.</p>
+        <p><b>Mesh:</b> Multiple paths between devices.</p>
+        <p><b>Hybrid:</b> Combination of topologies.</p>
+        <p><b>Wi-Fi:</b> Wireless local networking.</p>
+        <p><b>Satellite:</b> Communication using satellites.</p>
+        <p><b>Radio Waves:</b> Wireless signal transmission.</p>
+    </section>
+
+    <section class="quiz" id="quiz">
+        <h2>Test Your Knowledge</h2>
+        <p><b>Question:</b> Which topology uses a central switch?</p>
+
+        <form id="quizForm">
+            <label>
+                <input type="radio" name="answer" value="Bus">
+                Bus Topology
+            </label>
+
+            <label>
+                <input type="radio" name="answer" value="Star">
+                Star Topology
+            </label>
+
+            <label>
+                <input type="radio" name="answer" value="Ring">
+                Ring Topology
+            </label>
+
+            <button type="submit">Check Answer</button>
+        </form>
+
+        <p id="result"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Computer Network Topologies | Educational Notes</p>
+    <p>Created with HTML, CSS and JavaScript</p>
+</footer>
+
+<script>
+    // Interactive quiz
+    const quizForm = document.getElementById("quizForm");
+    const result = document.getElementById("result");
+
+    quizForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const selected = document.querySelector(
+            'input[name="answer"]:checked'
+        );
+
+        if (!selected) {
+            result.textContent = "Please select an answer first.";
+            result.style.color = "#d97706";
+            return;
+        }
+
+        if (selected.value === "Star") {
+            result.textContent = "Correct! Star topology uses a central switch.";
+            result.style.color = "#15803d";
+        } else {
+            result.textContent = "Incorrect. Try again!";
+            result.style.color = "#dc2626";
+        }
+    });
+</script>
+
+</body>
+</html>
